@@ -14,8 +14,9 @@ A full-stack **AI-powered natural-language database interaction system** that en
 The system combines **natural-language processing, SQL validation, and database integration** to make data retrieval more accessible while restricting execution to approved read-only queries.
 
 
-## System Architecture
+## 🏛️ System Architecture
 
+```mermaid
 flowchart TB
     U(["User / Analyst"])
 
@@ -29,15 +30,15 @@ flowchart TB
 
     subgraph BE["Backend — FastAPI"]
         API["POST /query"]
-        AI["AI Service<br/>SQL Generation"]
-        VAL["SQL Validator<br/>SELECT Only + LIMIT"]
-        DBL["Database Service<br/>SQLAlchemy + asyncpg"]
+        AI["AI Service — SQL Generation"]
+        VAL["SQL Validator — SELECT Only + LIMIT"]
+        DBL["Database Service — SQLAlchemy + asyncpg"]
         API --> AI
         AI --> VAL
         VAL --> DBL
     end
 
-    subgraph PG["Database — PostgreSQL 16"]
+    subgraph PG["Database — PostgreSQL"]
         SCHEMA[("Users and Orders Tables")]
     end
 
@@ -46,14 +47,7 @@ flowchart TB
     DBL -->|"Read-only Query"| SCHEMA
     SCHEMA -->|"Query Results"| DBL
     DBL --> RES
-
-    classDef frontend fill:#e8f2ff,stroke:#2878c8,color:#12345a
-    classDef backend fill:#e8f7f1,stroke:#238567,color:#164b3c
-    classDef database fill:#fff2dd,stroke:#c98522,color:#68420e
-
-    class UI,EX,RES frontend
-    class API,AI,VAL,DBL backend
-    class SCHEMA database
+```
 
 
 ## ✨ Key Features
