@@ -6,7 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_name: str = "AI SQL Assistant"
+    app_name: str = "AI-Based Natural Language Database Interaction System"
     environment: Literal["local", "test", "production"] = "local"
     log_level: str = "INFO"
 

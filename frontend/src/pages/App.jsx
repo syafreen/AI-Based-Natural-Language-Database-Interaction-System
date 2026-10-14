@@ -47,7 +47,7 @@ export default function App() {
     <main className="appShell">
       <section className="heroBand">
         <div className="heroCopy">
-          <p className="eyebrow">AI SQL Assistant</p>
+          <p className="eyebrow">AI-Based Natural Language Database Interaction System</p>
           <h1>Ask your database. Get validated SQL and live answers.</h1>
           <p className="heroText">
             Turn plain English into safe PostgreSQL queries with a validation layer that keeps every request read-only and bounded.
